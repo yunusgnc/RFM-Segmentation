@@ -1,0 +1,96 @@
+{
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "add": "Ekle",
+    "search": "Ara",
+    "filter": "Filtrele",
+    "reset": "Sıfırla",
+    "submit": "Gönder",
+    "close": "Kapat",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki",
+    "total": "Toplam",
+    "selected": "Seçili",
+    "all": "Tümü",
+    "none": "Hiçbiri"
+  },
+  "header": {
+    "title": "RFM Segmentasyonu",
+    "subtitle": "Recency, Frequency ve Monetary analizi kullanarak gelişmiş müşteri segmentasyonu"
+  },
+  "sidebar": {
+    "title": "Filtreler",
+    "resetFilters": "Filtreleri Sıfırla",
+    "recencyScore": "Yenilik Skoru",
+    "frequencyScore": "Sıklık Skoru", 
+    "monetaryScore": "Parasal Skor",
+    "sendSelectedIds": "Seçili ID'leri Gönder",
+    "noSelection": "Müşteri seçilmedi",
+    "selectedCount": "{{count}} müşteri seçildi"
+  },
+  "stats": {
+    "total": "Toplam",
+    "filtered": "Filtrelenmiş",
+    "selected": "Seçili",
+    "segments": "Segmentler"
+  },
+  "tabs": {
+    "gridView": "Grid Görünümü",
+    "listView": "Liste Görünümü"
+  },
+  "segments": {
+    "champions": "Şampiyonlar",
+    "loyalCustomers": "Sadık Müşteriler",
+    "atRisk": "Risk Altında",
+    "lost": "Kayıp",
+    "customers": "müşteri",
+    "customer": "müşteri",
+    "noCustomers": "0 müşteri"
+  },
+  "customer": {
+    "id": "ID",
+    "recency": "Yenilik",
+    "frequency": "Sıklık", 
+    "monetary": "Parasal",
+    "score": "Skor",
+    "select": "Seç",
+    "deselect": "Seçimi Kaldır"
+  },
+  "messages": {
+    "selectCustomer": "En az bir müşteri seçin",
+    "successSent": "{{count}} seçili ID başarıyla gönderildi!",
+    "errorSending": "Seçili ID'ler gönderilirken hata oluştu",
+    "networkError": "Ağ hatası. Lütfen tekrar deneyin.",
+    "filterApplied": "Filtre uygulandı",
+    "filtersReset": "Filtreler sıfırlandı"
+  },
+  "filters": {
+    "recency": {
+      "label": "Yenilik Skoru",
+      "description": "Son satın alma tarihine göre skor"
+    },
+    "frequency": {
+      "label": "Sıklık Skoru", 
+      "description": "Satın alma sıklığına göre skor"
+    },
+    "monetary": {
+      "label": "Parasal Skor",
+      "description": "Toplam harcama miktarına göre skor"
+    }
+  },
+  "rfm": {
+    "recency": "Yenilik (R)",
+    "frequency": "Sıklık (F)",
+    "monetary": "Parasal (M)",
+    "score": "Skor",
+    "analysis": "RFM Analizi",
+    "description": "Müşteri değerini ölçmek için kullanılan analiz yöntemi"
+  }
+} 

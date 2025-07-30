@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import { FaUsers } from 'react-icons/fa';
+import { useLanguage } from '../hooks/useLanguage';
 
 export default function SubmitButton({ onClick, isLoading, selectedCount }) {
+  const { t } = useLanguage();
+  
   return (
     <button
       onClick={onClick}
@@ -11,10 +14,12 @@ export default function SubmitButton({ onClick, isLoading, selectedCount }) {
       {isLoading ? (
         <>
           <FaUsers className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" />
-          Sending...
+          {t('common.loading')}
         </>
+      ) : selectedCount === 0 ? (
+        t('sidebar.noSelection')
       ) : (
-        `Send ${selectedCount} Selected IDs`
+        t('sidebar.selectedCount', { count: selectedCount })
       )}
     </button>
   );

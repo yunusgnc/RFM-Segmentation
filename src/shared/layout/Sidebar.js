@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { FilterDropdown, SubmitButton } from '../ui';
+import { useLanguage } from '../hooks/useLanguage';
 import { FaFilter } from 'react-icons/fa';
 
 export default function Sidebar({
@@ -13,20 +14,22 @@ export default function Sidebar({
   isLoading,
   selectedCount
 }) {
+  const { t } = useLanguage();
+  
   const filterConfigs = [
     {
       type: "recency",
-      label: "Recency Score",
+      label: t('sidebar.recencyScore'),
       icon: <FaFilter className="w-4 h-4 text-blue-400" />
     },
     {
       type: "frequency", 
-      label: "Frequency Score",
+      label: t('sidebar.frequencyScore'),
       icon: <FaFilter className="w-4 h-4 text-green-400" />
     },
     {
       type: "monetary",
-      label: "Monetary Score", 
+      label: t('sidebar.monetaryScore'), 
       icon: <FaFilter className="w-4 h-4 text-purple-400" />
     }
   ];
@@ -36,13 +39,13 @@ export default function Sidebar({
       <div className="bg-gray-800 rounded-xl p-4 border border-gray-700 sticky top-4">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold text-white flex items-center">
-            <FaFilter className="w-5 h-5 mr-2 text-blue-400" /> Filters
+            <FaFilter className="w-5 h-5 mr-2 text-blue-400" /> {t('sidebar.title')}
           </h3>
           <button
             onClick={onResetFilters}
             className="text-xs text-gray-400 hover:text-white transition-colors"
           >
-            Reset
+            {t('sidebar.resetFilters')}
           </button>
         </div>
         <div className="space-y-3">

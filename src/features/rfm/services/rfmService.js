@@ -46,12 +46,12 @@ export const rfmService = {
     return 'from-red-500 to-pink-600';
   },
 
-  getSegmentName: (f, m) => {
+  getSegmentName: (f, m, t = null) => {
     const score = f + m;
-    if (score >= 8) return 'Champions';
-    if (score >= 6) return 'Loyal Customers';
-    if (score >= 4) return 'At Risk';
-    return 'Lost';
+    if (score >= 8) return t ? t('segments.champions') : 'Champions';
+    if (score >= 6) return t ? t('segments.loyalCustomers') : 'Loyal Customers';
+    if (score >= 4) return t ? t('segments.atRisk') : 'At Risk';
+    return t ? t('segments.lost') : 'Lost';
   },
 
   getStatsData: (customers, filteredCustomers, selectedIds) => [

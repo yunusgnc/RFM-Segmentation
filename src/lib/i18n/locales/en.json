@@ -1,0 +1,96 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "reset": "Reset",
+    "submit": "Submit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "total": "Total",
+    "selected": "Selected",
+    "all": "All",
+    "none": "None"
+  },
+  "header": {
+    "title": "RFM Segmentation",
+    "subtitle": "Advanced customer segmentation using Recency, Frequency, and Monetary analysis"
+  },
+  "sidebar": {
+    "title": "Filters",
+    "resetFilters": "Reset Filters",
+    "recencyScore": "Recency Score",
+    "frequencyScore": "Frequency Score",
+    "monetaryScore": "Monetary Score",
+    "sendSelectedIds": "Send Selected IDs",
+    "noSelection": "No customers selected",
+    "selectedCount": "{{count}} customers selected"
+  },
+  "stats": {
+    "total": "Total",
+    "filtered": "Filtered",
+    "selected": "Selected",
+    "segments": "Segments"
+  },
+  "tabs": {
+    "gridView": "Grid View",
+    "listView": "List View"
+  },
+  "segments": {
+    "champions": "Champions",
+    "loyalCustomers": "Loyal Customers",
+    "atRisk": "At Risk",
+    "lost": "Lost",
+    "customers": "customers",
+    "customer": "customer",
+    "noCustomers": "0 customers"
+  },
+  "customer": {
+    "id": "ID",
+    "recency": "Recency",
+    "frequency": "Frequency",
+    "monetary": "Monetary",
+    "score": "Score",
+    "select": "Select",
+    "deselect": "Deselect"
+  },
+  "messages": {
+    "selectCustomer": "Please select at least one customer",
+    "successSent": "Successfully sent {{count}} selected IDs!",
+    "errorSending": "Error sending selected IDs",
+    "networkError": "Network error. Please try again.",
+    "filterApplied": "Filter applied",
+    "filtersReset": "Filters reset"
+  },
+  "filters": {
+    "recency": {
+      "label": "Recency Score",
+      "description": "Score based on last purchase date"
+    },
+    "frequency": {
+      "label": "Frequency Score",
+      "description": "Score based on purchase frequency"
+    },
+    "monetary": {
+      "label": "Monetary Score",
+      "description": "Score based on total spending amount"
+    }
+  },
+  "rfm": {
+    "recency": "Recency (R)",
+    "frequency": "Frequency (F)",
+    "monetary": "Monetary (M)",
+    "score": "Score",
+    "analysis": "RFM Analysis",
+    "description": "Analysis method used to measure customer value"
+  }
+} 

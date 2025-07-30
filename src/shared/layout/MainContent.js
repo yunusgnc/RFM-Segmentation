@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { StatsCard, TabButton } from '../ui';
+import { useLanguage } from '../hooks/useLanguage';
 import { CustomerGridCell, CustomerListCard } from '../../features/rfm';
 
 export default function MainContent({
@@ -13,6 +14,8 @@ export default function MainContent({
   getSegmentColor,
   getSegmentName
 }) {
+  const { t } = useLanguage();
+  
   return (
     <div className="xl:col-span-3">
       {/* Stats Cards */}
@@ -24,8 +27,12 @@ export default function MainContent({
 
       {/* Tabs */}
       <div className="flex space-x-1 bg-gray-800 rounded-xl p-1 mb-6">
-        <TabButton active={activeTab === 'grid'} onClick={() => onTabChange('grid')}>Grid View</TabButton>
-        <TabButton active={activeTab === 'list'} onClick={() => onTabChange('list')}>List View</TabButton>
+        <TabButton active={activeTab === 'grid'} onClick={() => onTabChange('grid')}>
+          {t('tabs.gridView')}
+        </TabButton>
+        <TabButton active={activeTab === 'list'} onClick={() => onTabChange('list')}>
+          {t('tabs.listView')}
+        </TabButton>
       </div>
 
       {activeTab === 'grid' ? (
@@ -41,7 +48,7 @@ export default function MainContent({
                   selectedIds={selectedIds}
                   onCustomerClick={onCustomerClick}
                   getSegmentColor={getSegmentColor}
-                  getSegmentName={getSegmentName}
+                  getSegmentName={(f, m) => getSegmentName(f, m, t)}
                 />
               ))
             )}
@@ -56,7 +63,7 @@ export default function MainContent({
                 customer={customer}
                 selected={selectedIds.includes(customer.id)}
                 onClick={() => onCustomerClick(customer.id)}
-                getSegmentName={getSegmentName}
+                getSegmentName={(f, m) => getSegmentName(f, m, t)}
               />
             ))}
           </div>

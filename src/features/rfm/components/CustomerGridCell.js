@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useCallback } from 'react';
+import { useLanguage } from '../../../shared/hooks/useLanguage';
 
 export default function CustomerGridCell({ f, m, customers, selectedIds, onCustomerClick, getSegmentColor, getSegmentName }) {
+  const { t } = useLanguage();
   const isEmpty = customers.length === 0;
 
   const handleCustomerClick = useCallback((customerId) => {
@@ -19,12 +21,22 @@ export default function CustomerGridCell({ f, m, customers, selectedIds, onCusto
           : 'bg-white/10 text-white hover:bg-white/20'
       }`}
     >
-      <div className="font-medium">ID: {customer.id}</div>
+      <div className="font-medium">{t('customer.id')}: {customer.id}</div>
       <div className="text-gray-300 text-xs">
-        R:{customer.recencyScore} F:{customer.frequencyScore} M:{customer.monetaryScore}
+        {t('rfm.recency')}:{customer.recencyScore} {t('rfm.frequency')}:{customer.frequencyScore} {t('rfm.monetary')}:{customer.monetaryScore}
       </div>
     </div>
-  ), [selectedIds, handleCustomerClick]);
+  ), [selectedIds, handleCustomerClick, t]);
+
+  const getCustomerCountText = () => {
+    if (customers.length === 0) {
+      return t('segments.noCustomers');
+    } else if (customers.length === 1) {
+      return `1 ${t('segments.customer')}`;
+    } else {
+      return `${customers.length} ${t('segments.customers')}`;
+    }
+  };
 
   return (
     <div
@@ -37,10 +49,10 @@ export default function CustomerGridCell({ f, m, customers, selectedIds, onCusto
       <div className="text-center mb-1 sm:mb-2">
         <div className="text-xs text-gray-400 mb-1">F{f}M{m}</div>
         <div className="text-xs sm:text-sm font-semibold text-white">
-          {getSegmentName(f, m)}
+          {getSegmentName(f, m, t)}
         </div>
         <div className="text-xs text-gray-300">
-          {customers.length} customers
+          {getCustomerCountText()}
         </div>
       </div>
       <div className="space-y-1 max-h-24 sm:max-h-32 overflow-y-auto">
