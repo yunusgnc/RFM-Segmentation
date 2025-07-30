@@ -18,14 +18,12 @@ export default function MainContent({
   
   return (
     <div className="xl:col-span-3">
-      {/* Stats Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         {statsData.map((stat, index) => (
           <StatsCard key={index} {...stat} />
         ))}
       </div>
 
-      {/* Tabs */}
       <div className="flex space-x-1 bg-gray-800 rounded-xl p-1 mb-6">
         <TabButton active={activeTab === 'grid'} onClick={() => onTabChange('grid')}>
           {t('tabs.gridView')}

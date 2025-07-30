@@ -13,19 +13,6 @@ export default function FilterDropdown({
   onCustomChange,
   onClose
 }) {
-  // Safety check for undefined currentFilter
-  if (!currentFilter || typeof currentFilter.min === 'undefined' || typeof currentFilter.max === 'undefined') {
-    return null;
-  }
-
-  const presets = [
-    { name: 'All', min: 1, max: 5, color: 'bg-gray-500' },
-    { name: 'High', min: 4, max: 5, color: 'bg-green-500' },
-    { name: 'Medium', min: 2, max: 4, color: 'bg-yellow-500' },
-    { name: 'Low', min: 1, max: 2, color: 'bg-red-500' },
-    { name: 'Custom', min: currentFilter.min, max: currentFilter.max, color: 'bg-blue-500' }
-  ];
-
   const handlePresetClick = useCallback((preset) => {
     onQuickFilter(type, { min: preset.min, max: preset.max });
     if (preset.name !== 'Custom') onClose();
@@ -48,6 +35,18 @@ export default function FilterDropdown({
       {num}
     </button>
   ), [currentFilter, handleCustomChange]);
+
+  if (!currentFilter || typeof currentFilter.min === 'undefined' || typeof currentFilter.max === 'undefined') {
+    return null;
+  }
+
+  const presets = [
+    { name: 'All', min: 1, max: 5, color: 'bg-gray-500' },
+    { name: 'High', min: 4, max: 5, color: 'bg-green-500' },
+    { name: 'Medium', min: 2, max: 4, color: 'bg-yellow-500' },
+    { name: 'Low', min: 1, max: 2, color: 'bg-red-500' },
+    { name: 'Custom', min: currentFilter.min, max: currentFilter.max, color: 'bg-blue-500' }
+  ];
 
   return (
     <div className="relative">

@@ -1,4 +1,3 @@
-// Shared UI Components
 export { default as StatsCard } from './StatsCard';
 export { default as TabButton } from './TabButton';
 export { default as FilterDropdown } from './FilterDropdown';

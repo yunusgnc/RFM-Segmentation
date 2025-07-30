@@ -1,2 +1,1 @@
-// RFM Utils
-export { calculateRFMScores } from './rfmCalculator'; 
+export * from './rfmCalculator'; 

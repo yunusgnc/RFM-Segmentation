@@ -13,7 +13,6 @@ export function useLanguage() {
   const changeLanguage = (locale) => {
     setLocale(locale);
     setCurrentLocale(locale);
-    // Force re-render by reloading the page
     window.location.reload();
   };
 

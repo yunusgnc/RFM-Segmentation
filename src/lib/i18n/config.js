@@ -44,7 +44,6 @@ export function t(key, locale = getLocale(), params = {}) {
   }
   
   if (typeof value === 'string') {
-    // Replace parameters like {{count}} with actual values
     return value.replace(/\{\{(\w+)\}\}/g, (match, param) => {
       return params[param] !== undefined ? params[param] : match;
     });
