@@ -1,227 +1,98 @@
-# RFM Segmentation Dashboard
+# RFM Segmentasyon Dashboard
 
-Advanced customer segmentation interface using Recency, Frequency, and Monetary (RFM) analysis with modern React architecture.
+RFM (Recency, Frequency, Monetary) analizi kullanarak müşteri segmentasyonu yapan interaktif web uygulaması.
 
-## 🚀 Features
+## 🎯 Proje Amacı
 
-- **5x5 Grid Visualization**: Interactive grid showing customer segments
-- **Advanced Filtering**: Real-time filtering by Recency, Frequency, and Monetary scores
-- **Dual View Modes**: Grid and List view options
-- **Modern UI**: Dark theme with gradient effects and smooth animations
-- **Real-time Statistics**: Live updates of customer counts and selections
-- **Error Handling**: Comprehensive error boundaries and validation
-- **Performance Optimized**: React.memo, useCallback, and useMemo optimizations
-- **React Query Integration**: Robust API state management with caching
+Bu proje, müşteri verilerini RFM analizi ile segmentlere ayırarak görselleştiren bir dashboard sunar. Müşterilerin satın alma davranışlarını analiz ederek değerli segmentlere ayırır.
 
-## 🏗️ Architecture
+## ✨ Özellikler
 
-### Feature-Based Structure
-```
-src/
-├── app/                    # Next.js App Router
-│   ├── api/               # API routes
-│   ├── globals.css        # Global styles
-│   ├── layout.js          # Root layout
-│   └── page.js            # Main page
-├── features/              # Feature-based organization
-│   └── rfm/              # RFM Feature
-│       ├── components/    # RFM-specific components
-│       │   ├── CustomerGridCell.js
-│       │   └── CustomerListCard.js
-│       ├── services/      # RFM business logic
-│       │   └── rfmService.js
-│       ├── utils/         # RFM utilities
-│       │   └── rfmCalculator.js
-│       └── index.js       # Feature exports
-├── shared/                # Shared resources
-│   ├── ui/               # Reusable UI components
-│   │   ├── StatsCard.js
-│   │   ├── TabButton.js
-│   │   ├── FilterDropdown.js
-│   │   ├── SubmitButton.js
-│   │   └── index.js
-│   ├── layout/           # Layout components
-│   │   ├── Header.js
-│   │   ├── Sidebar.js
-│   │   ├── MainContent.js
-│   │   └── index.js
-│   ├── hooks/            # Shared hooks
-│   │   ├── useRFMState.js
-│   │   ├── useApi.js
-│   │   └── index.js
-│   ├── ErrorBoundary.js  # Error handling
-│   ├── validation.js     # Validation utilities
-│   └── index.js          # Shared exports
-├── data/                 # Static data
-│   └── customers.json    # Mock customer data
-└── lib/                  # Third-party integrations
-```
+### 🎨 **Görselleştirme**
+- **5x5 Grid**: Müşteri verilerini x-y koordinatlarında görselleştirme
+- **Segment Renkleri**: Her segment için farklı renk kodlaması
+- **İnteraktif Kartlar**: Tıklanabilir müşteri kartları
 
-## 🛠️ Technologies
+### 🔍 **Filtreleme**
+- **Recency Filtresi**: Son satın alma tarihine göre filtreleme
+- **Frequency Filtresi**: Satın alma sıklığına göre filtreleme  
+- **Monetary Filtresi**: Harcama miktarına göre filtreleme
+- **Gerçek Zamanlı**: Filtreler anında sonuç verir
 
-- **Framework**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS
-- **State Management**: React Query (@tanstack/react-query)
-- **UI Components**: React Icons
-- **Notifications**: React Toastify
-- **Validation**: Custom validation utilities
-- **Error Handling**: Custom Error Boundary
+### 📊 **Görünüm Modları**
+- **Grid Görünümü**: 5x5 grid formatında segment görünümü
+- **Liste Görünümü**: Müşteri listesi formatında görünüm
+- **İstatistikler**: Toplam, filtrelenmiş, seçili müşteri sayıları
 
-## 📊 RFM Algorithm
+### 🌍 **Çoklu Dil**
+- **Türkçe**: Varsayılan dil
+- **İngilizce**: İkinci dil seçeneği
+- **Dil Değiştirici**: Header'da kolay dil değiştirme
 
-### Scoring System (1-5 Scale)
-- **Recency**: Days since last purchase (1 = recent, 5 = old)
-- **Frequency**: Number of purchases (1 = low, 5 = high)
-- **Monetary**: Total spend amount (1 = low, 5 = high)
+### 🎯 **Seçim ve Gönderim**
+- **Müşteri Seçimi**: Tekil veya toplu müşteri seçimi
+- **API Entegrasyonu**: Seçilen ID'leri backend'e gönderme
+- **Bildirimler**: İşlem sonuçları için toast bildirimleri
 
-### Segment Classification
-- **Champions** (Score 8-10): High frequency + high monetary
-- **Loyal Customers** (Score 6-7): Good frequency + good monetary
-- **At Risk** (Score 4-5): Declining engagement
-- **Lost** (Score 2-3): Low engagement
+## 🛠️ Kullanılan Teknolojiler
 
-## 🎨 UI/UX Features
+- **Next.js 15**: React framework
+- **Tailwind CSS**: Styling
+- **React Query**: API state management
+- **React Icons**: İkonlar
+- **React Toastify**: Bildirimler
 
-### Modern Design
-- Dark gradient theme
-- Glassmorphism effects
-- Smooth hover animations
-- Responsive grid layout
-- Interactive customer cards
+## 📊 RFM Analizi
 
-### User Experience
-- Real-time filtering
-- Visual segment indicators
-- Bulk selection capabilities
-- Toast notifications
-- Loading states
-- Error recovery
+### Skorlama (1-5 Ölçeği)
+- **Recency**: Son satın almadan bu yana geçen günler
+- **Frequency**: Toplam satın alma sayısı
+- **Monetary**: Toplam harcama miktarı
 
-## 🚀 Getting Started
+### Segmentler
+- **Şampiyonlar** (8-10): En değerli müşteriler
+- **Sadık Müşteriler** (6-7): İyi müşteriler
+- **Risk Altında** (4-5): Azalan müşteriler
+- **Kayıp** (2-3): Düşük değerli müşteriler
 
-### Prerequisites
-- Node.js 18+
-- npm or yarn
+## 🚀 Kullanım
 
-### Installation
+### Kurulum
 ```bash
-# Clone the repository
-git clone <repository-url>
+git clone https://github.com/yunusgnc/RFM-Segmentation.git
 cd rfm-segmentation
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
 ```
 
-### Build for Production
-```bash
-npm run build
-npm start
+### Kullanım Adımları
+1. **Grid Görünümü**: Müşteri segmentlerini 5x5 grid'de görüntüle
+2. **Filtreleme**: Sol panelden RFM skorlarına göre filtrele
+3. **Seçim**: İstediğin müşterileri seç
+4. **Gönderim**: "Seçili ID'leri Gönder" butonuna tıkla
+
+## 📁 Proje Yapısı
+
+```
+src/
+├── app/                    # Ana sayfa ve API
+├── features/rfm/          # RFM özellikleri
+├── shared/               # Ortak komponentler
+├── lib/i18n/            # Dil desteği
+└── data/                # Müşteri verileri
 ```
 
-## 📝 API Endpoints
+## 🌐 Canlı Demo
 
-### POST /api/selected-ids
-Sends selected customer IDs to backend.
+**Vercel**: https://rfm-segmentation-h6du-4tld3otwy-yunusgncs-projects.vercel.app/
 
-**Request:**
-```json
-{
-  "selectedIds": [1, 2, 3, 4, 5]
-}
-```
+## 📂 Repository
 
-**Response:**
-```json
-{
-  "success": true,
-  "count": 5,
-  "message": "Successfully processed 5 selected IDs"
-}
-```
+**GitHub**: https://github.com/yunusgnc/RFM-Segmentation
 
-## 🧪 Test Scenarios
+---
 
-### Filtering Tests
-- [x] Recency filter (1-5 range)
-- [x] Frequency filter (1-5 range)
-- [x] Monetary filter (1-5 range)
-- [x] Combined filters
-- [x] Filter reset functionality
-
-### Selection Tests
-- [x] Individual customer selection
-- [x] Bulk selection
-- [x] Selection persistence
-- [x] Selection clearing
-
-### API Tests
-- [x] Valid data submission
-- [x] Error handling
-- [x] Loading states
-- [x] Success notifications
-
-## 📈 Performance Metrics
-
-- **Lighthouse Score**: > 90
-- **First Contentful Paint**: < 2s
-- **Largest Contentful Paint**: < 3s
-- **Cumulative Layout Shift**: < 0.1
-- **First Input Delay**: < 100ms
-
-## 🔧 Development
-
-### Code Quality
-- ESLint configuration
-- PropTypes for type checking
-- Clean code principles
-- SOLID architecture
-- Feature-based organization
-
-### Performance Optimizations
-- React.memo for components
-- useCallback for event handlers
-- useMemo for expensive calculations
-- Virtual scrolling (planned)
-- Code splitting (planned)
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-```bash
-npm install -g vercel
-vercel
-```
-
-### Docker
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY . .
-RUN npm run build
-EXPOSE 3000
-CMD ["npm", "start"]
-```
-
-## 📄 License
-
-MIT License - see LICENSE file for details.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
-
-## 📞 Support
-
-For questions or support, please open an issue in the repository.
+**Geliştirici**: Yunus Günc  
+**Versiyon**: 1.0.0
 
 
